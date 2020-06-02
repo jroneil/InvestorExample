@@ -1,0 +1,47 @@
+ //----------------------- funds
+/* if (investor['funds']) {
+    for (let fund of investor.funds) {
+      investorFunds.push(
+        new FormGroup({
+          'fname': new FormControl(fund.name, Validators.required),
+
+
+        })
+
+      );//end investorFunds.push
+
+    } //end fund for
+  }// end if (client['fund'])
+
+
+//------------------------------end funds
+
+
+
+ngOnInit() {
+
+    this.clientForm = this.fb.group({
+      client_details: this.fb.group({
+        clientName: "",
+        description: ""
+      }),
+      investors: this.fb.array([this.investors])
+    });
+  }
+
+  get investors(): FormGroup {
+    return this.fb.group({
+      name: "",
+      funds: this.fb.array([this.funds])
+    });
+  }
+
+  get funds(): FormGroup {
+    return this.fb.group({
+      name: ""
+    });
+
+
+
+    this.investorsFG.addControl('name', new FormControl(investor.name, Validators.required)
+    this.investorsFG.addControl('email',new FormControl(investor.email, Validators.required)

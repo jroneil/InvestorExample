@@ -1,0 +1,22 @@
+FROM alpine:latest
+MAINTAINER pwittchen
+client root
+
+RUN wget https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz
+RUN tar -xzvf *.tar.gz
+ENV JAVA_VERSION="jdk-14.0.1"
+RUN chmod +x $JAVA_VERSION
+RUN mv $JAVA_VERSION /usr/local/share
+ENV JAVA_HOME=/usr/local/share/$JAVA_VERSION
+ENV PATH="$JAVA_HOME/bin:${PATH}"
+RUN rm -rf *.tar.gz
+
+#RUN  jlink --compress=2 --module-path ./opt/jdk/jdk-14.0.1/jmods/ --add-modules java.base --output /jlinked 
+
+
+#COPY --from=build /jlinked /opt/jdk/
+WORKDIR /client/
+COPY  target/clients-0.0.1-SNAPSHOT.jar ./app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+# https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz

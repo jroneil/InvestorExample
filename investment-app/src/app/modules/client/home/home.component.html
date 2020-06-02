@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1> Client</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div>
+
+  <button type="button" class="btn btn-success" [routerLink]="['/client/create/']">Create new client</button>
+  <table>
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Client Name</th>
+              <th>Description</th>
+                            <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let client of clients">
+              <td><a [routerLink]=""  (click)="OnSelectClient(client)"> {{client.id}}</a></td>
+              <td>{{client.clientName}}</td>
+              <td>{{client.description}}</td>
+              <td>
+                  <button type="button" class="btn btn-success" [routerLink]="['/client/update/', client.id]">Update</button>
+                  <button type="button" class="btn btn-danger" (click)="onRemove(client.id)" >Remove</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+<div class="col-sm-6">
+  <app-investor-table *ngIf="selectedClient" [investors]=selectedClient.investors></app-investor-table>
+</div>
+</div>

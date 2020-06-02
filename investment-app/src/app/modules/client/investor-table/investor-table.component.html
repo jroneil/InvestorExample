@@ -1,0 +1,18 @@
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>Investor Name</th>
+          <th>Investor Email</th>
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let investor of investors">
+          <td>{{investor.id}}</td>
+          <td>{{investor.name}}</td>
+          <td>{{investor.email}}</td>
+
+      </tr>
+  </tbody>
+</table>
