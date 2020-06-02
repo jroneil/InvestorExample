@@ -21,3 +21,8 @@ This README would normally document whatever steps are necessary to get your app
     * npm install   *adds node modules*
     * ng serve
 
+### URL ###
+ * Swagger API Documentation
+  * http://localhost:8080/swagger-ui.html
+ * Angular UI 
+  * http://localhost:4200/client/home
