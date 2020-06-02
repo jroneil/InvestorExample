@@ -2,28 +2,22 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Example implemtation using Spring boot and Angular 9###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Spring boot application provided a REST API for the Angular Application this is in the investment folder
+* Angular 9 application exist in the investment-app folder
+* The Spring boot application has 61 perecent test coverage at the moment
+
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Start the Spring boot application
+* Start mysql Docker/Docker compose need to be installed
+  * cd investment/mysql
+  * docker-compose up
+* Build and compile
+    * ./mvnw spring-boot:run
+* Start Angular 9 Application
+    * npm install   *adds node modules*
+    * ng serve
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
