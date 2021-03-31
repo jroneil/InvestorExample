@@ -39,7 +39,7 @@ export class CreateComponent implements OnInit {
           this.initForm();  let arr= [1,2,3].filter(val=>val!=2);
           console.log(arr);
           let c = 3;
-          console.log(this.a());
+
         }
       );
   }
