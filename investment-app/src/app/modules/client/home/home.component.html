@@ -8,22 +8,24 @@
 <div>
 
   <button type="button" class="btn btn-success" [routerLink]="['/client/create/']">Create new client</button>
-  <table>
-      <thead>
+  <table class="table table-striped">
+    <thead class="thead-dark">
           <tr>
-              <th>Id</th>
-              <th>Client Name</th>
-              <th>Description</th>
-                            <th>Action</th>
+              <th scope="col">Id</th>
+              <th scope="col">Client Name</th>
+              <th scope="col">Description</th>
+                            <th scope="col" colspan="2">Action</th>
           </tr>
       </thead>
       <tbody>
           <tr *ngFor="let client of clients">
-              <td><a [routerLink]=""  (click)="OnSelectClient(client)"> {{client.id}}</a></td>
+              <td scope="row"><a [routerLink]=""  (click)="OnSelectClient(client)"> {{client.id}}</a></td>
               <td>{{client.clientName}}</td>
               <td>{{client.description}}</td>
               <td>
                   <button type="button" class="btn btn-success" [routerLink]="['/client/update/', client.id]">Update</button>
+                </td>
+                <td>
                   <button type="button" class="btn btn-danger" (click)="onRemove(client.id)" >Remove</button>
               </td>
           </tr>

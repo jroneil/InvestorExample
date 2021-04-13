@@ -1,0 +1,4 @@
+.metadata/
+investment/.metadata/
+.vscode/
+investment-app/node_modules/
