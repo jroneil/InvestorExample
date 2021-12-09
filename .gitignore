@@ -2,3 +2,5 @@
 investment/.metadata/
 .vscode/
 investment-app/node_modules/
+investment-app/.angular/**
+investment-app/.angular/cache/angular-webpack/
